@@ -1,0 +1,4 @@
+# app/_config/elements.yml
+BlockPage:
+  extensions:
+    - DNADesign\Elemental\Extensions\ElementalPageExtension

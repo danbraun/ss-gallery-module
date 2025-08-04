@@ -1,0 +1,6 @@
+# app/_config/themes.yml
+SilverStripe\View\SSViewer:
+  themes:
+    - '$public'
+    - ss-gallery
+    - '$default'
