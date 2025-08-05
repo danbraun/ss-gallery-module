@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SS Gallery Module Testing</title>
     <% require themedCSS("dist/css/index") %>
+    <% require themedCSS("dist/css/justifiedGallery.min") %>
 </head>
 <body class="$ClassName">
 

@@ -8,8 +8,10 @@ use SilverStripe\Assets\Image;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\TextField;
+use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\ORM\HasManyList;
 use SilverStripe\View\ArrayData;
 use SilverStripe\View\ViewableData;
 
@@ -68,5 +70,6 @@ class GalleryImage extends DataObject
         }
         return null;
     }
+
 
 }
