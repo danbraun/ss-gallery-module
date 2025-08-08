@@ -70,18 +70,26 @@ class ElementGallery extends BaseElement
      */
     public function OffsetGalleryImages(int $offset = 0, int $limit = 6): HasManyList
     {
+        // Get the HasManyList for the GalleryImages relation.
+        // This is the correct object to return, whether it has records or not.
         $images = $this->GalleryImages();
 
         $request = Controller::curr()->getRequest();
         $gallery_all = (string)$request->getVar('gallery_all');
 
-        if ($images->exists() && $limit > 0 && $gallery_all !== 'true') {
-            return $images->limit($limit, $offset);
-        } elseif ($images->exists()) {
+        // Return the full list if the 'gallery_all' flag is set,
+        // or if the limit is set to 0.
+        if ($gallery_all === 'true' || $limit === 0) {
             return $images;
         }
 
-        return HasManyList::create(); // empty
+        // If there are no images, simply return the empty list.
+        if (!$images->exists()) {
+            return $images;
+        }
+
+        // Otherwise, apply the limit and offset and return the result.
+        return $images->limit($limit, $offset);
     }
     public function LoadAllLink()
     {
